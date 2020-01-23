@@ -1,0 +1,68 @@
+<%- include('header') -%>
+
+
+<section id="payment" class="m-top">
+<div class="row">
+    <div class="col-md-6"> 
+        <h2>Billing information</h2>
+
+        <address>
+            <%= user.billing.firstname %> <%= user.billing.lastname %><br>
+            <%= user.billing.email %> <%= user.billing.phone %><br>
+            <%= user.billing.address %>  <%= user.billing.zip %> <%= user.billing.city %>
+        </address>
+
+    </div>
+    <div class="col-md-6"> 
+        <h2>Shipping information</h2>
+
+        <% if(user.shipping) { %>
+
+        <address>
+            <%= user.shipping.firstname %> <%= user.shipping.lastname %><br>
+            <%= user.shipping.email %> <%= user.shipping.phone %><br>
+            <%= user.shipping.address %>  <%= user.shipping.zip %> <%= user.shipping.city %>
+        </address>
+
+        <% } else { %>
+            <address>
+            <%= user.billing.firstname %> <%= user.billing.lastname %><br>
+            <%= user.billing.email %> <%= user.billing.phone %><br>
+            <%= user.billing.address %>  <%= user.billing.zip %> <%= user.billing.city %>
+            </address>
+        <% } %>
+
+    </div>
+</div>
+<div class="row m-top">
+    <div class="col-md-6">
+        <h2>Your order</h2>
+        <table class="order">
+            <thead>
+                <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+               <tr>
+                    <td>Sample product</td>
+                    <td>1</td>
+                    <td>$ 10.50</td>
+                </tr> 
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <h2>Total</h2>
+        <p id="total">$ 10.50</p>
+        <%- include('paypal-form') -%>
+    </div>
+</div>
+</section>                        
+   
+            
+
+
+<%- include('footer') -%>

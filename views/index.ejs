@@ -1,0 +1,41 @@
+<%- include('header') -%>
+
+
+<section id="login-signup" class="m-top">
+    <div class="row">
+        <div class="col-md-6"> 
+            <h2>Already customer? Login</h2>
+            <form action="/login" method="post" class="form" id="login-form" novalidate>
+                <div class="form-row">
+                    <input type="email" name="email" id="email" placeholder="E-mail">
+                </div>
+                <div class="form-row">
+                    <input type="password" name="password" id="password" placeholder="Password">
+                </div>
+                <p>
+                    <input type="submit" class="btn" value="Login">
+                </p>
+            </form>
+        </div>
+        <div class="col-md-6"> 
+            <h2>New customer? Register</h2>
+            <form action="/register" method="post" id="register-form" class="form" novalidate>
+                <div class="form-row">
+                    <input type="text" name="name" id="name" placeholder="Name">
+                </div>
+                <div class="form-row">
+                    <input type="email" name="email" id="email-register" placeholder="E-mail">
+                </div>
+                <div class="form-row">
+                    <input type="text" name="password" id="password-register" placeholder="Password">
+                </div>
+                <p>
+                    <input type="submit" class="btn" value="Register">
+                </p>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<%- include('footer') -%>

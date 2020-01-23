@@ -1,0 +1,71 @@
+<%- include('header') -%>
+
+
+<section id="billing-shipping" class="m-top">
+   
+            <form action="/billing-shipping" method="post" class="form" id="billing-shipping-form" novalidate>
+               <div class="row">
+                    <div class="col-md-6"> 
+                        <h2>Billing information</h2>
+                        <div class="form-row">
+                            <input type="text" name="billing_first_name" id="billing_first_name" placeholder="First name">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" name="billing_last_name" id="billing_last_name" placeholder="Last name">
+                        </div>
+                        <div class="form-row">
+                            <input type="email" name="billing_email" id="billing_email" placeholder="E-mail" value="<%= user.email %>">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" name="billing_address" id="billing_address" placeholder="Address">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" name="billing_city" id="billing_city" placeholder="City">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" name="billing_zip" id="billing_zip" placeholder="Postal code">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" name="billing_phone" id="billing_phone" placeholder="Phone">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6"> 
+                        <h2>Shipping information</h2>
+                        <div class="form-row">
+                            <label for="same-as"><input type="checkbox" name="same_as" id="same-as" value="1">Same as billing</label>
+                        </div>
+                        <div id="shipping">
+                        <div class="form-row">
+                            <input type="text" name="shipping_first_name" id="shipping_first_name" placeholder="First name">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" name="shipping_last_name" id="shipping_last_name" placeholder="Last name">
+                        </div>
+                        <div class="form-row">
+                            <input type="email" name="shipping_email" id="shipping_email" placeholder="E-mail" value="<%= user.email %>">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" name="shipping_address" id="shipping_address" placeholder="Address">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" name="shipping_city" id="shipping_city" placeholder="City">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" name="shipping_zip" id="shipping_zip" placeholder="Postal code">
+                        </div>
+                        <div class="form-row">
+                            <input type="text" name="shipping_phone" id="shipping_phone" placeholder="Phone">
+                        </div>
+                        </div>
+                    </div>
+
+                </div>         
+                <p>
+                    <input type="submit" class="btn" value="Save">
+                </p>
+            </form>
+</section>
+
+
+<%- include('footer') -%>

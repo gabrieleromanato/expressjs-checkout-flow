@@ -1,0 +1,253 @@
+@import url("reset.css");
+
+#checkout {
+    margin: 2.5em auto;
+    max-width: 1024px;
+    padding: 0 1em;
+    color: #000;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell,'Helvetica Neue', sans-serif;
+    line-height: 1.5;
+    font-size: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+#checkout-navigation {
+    height: 2em;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.3em;
+}
+
+#checkout-navigation ul {
+    height: 100%;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    counter-reset: step;
+}
+
+#checkout-navigation li {
+    width: 25%;
+    height: 100%;
+    line-height: 2;
+    position: relative;
+}
+
+#checkout-navigation li:before {
+    counter-increment: step;
+    content: counter(step);
+    display: inline-block;
+    color: #999;
+    margin-right: 0.25em;
+    width: 2em;
+    height: auto;
+    box-sizing: border-box;
+    padding: 0 0.2em;
+    border-radius: 50%;
+    border: 1px solid;
+    font-size: 12px;
+    text-align: center;
+}
+
+#checkout-navigation li.active:before {
+    color: #000;
+}
+
+#checkout-navigation a,
+#checkout-navigation a:hover {
+    text-decoration: none;
+    color: #999;
+    cursor: not-allowed;
+}
+
+#checkout-navigation .active a,
+#checkout-navigation .active a:hover {
+    color: #000;
+    cursor: pointer;
+}
+
+.m-top {
+    margin: 2em 0;
+}
+
+.form-row {
+    margin-bottom: 1.6em;
+}
+
+.form input {
+    -webkit-appearance: none;
+    display: block;
+    box-sizing: border-box;
+}
+
+.form input[type=checkbox] {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid #000;
+    margin-right: 0.4em;
+    cursor: pointer;
+}
+
+.form input[type=checkbox]:checked {
+    background: url(../images/dot.png) no-repeat 50% 50%;
+    background-size: 4px 4px;
+}
+
+.form input[type=text],
+.form input[type=email],
+.form input[type=password] {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ddd;
+}
+
+.btn {
+    background-color: #000;
+    color: #fff;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
+    font-size: 13px;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[class*="col"] {
+    box-sizing: border-box;
+    padding: 0 0.9em;
+}
+
+.col-md-6 {
+    width: 50%;
+}
+
+#checkout h2 {
+    text-transform: uppercase;
+    color: #000;
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-bottom: 1em;
+}
+
+#checkout h2:after {
+    content: '';
+    width: 1em;
+    height: 2px;
+    display: block;
+    background-color: #000;
+    margin-top: 1px;
+}
+
+.msg {
+    margin: 1.25em 0;
+}
+
+.error {
+    color: #d00;
+}
+
+.success {
+    color: #080;
+}
+
+#payment address {
+    line-height: 1.6;
+    padding: 0.85em;
+    border: 1px solid #ddd;
+}
+
+#payment address:first-line {
+    font-weight: bold;
+}
+
+.order {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-top: 1.5em;
+}
+
+.order th {
+    text-align: left;
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 13px;
+    text-transform: uppercase;
+    padding-bottom: 0.5em;
+}
+
+.order td {
+    padding: 0.85em 0;
+    border: 1px solid #ddd;
+    border-width: 1px 0 1px 0;
+}
+
+#total {
+    font-weight: bold;
+    color: #000;
+    font-size: 16px;
+}
+
+#form-payment {
+    margin-top: 1.2em;
+}
+
+.info {
+    margin: 1.5em 0;
+    padding: 0.85em;
+    border: 1px solid #ddd;
+    line-height: 1.6;
+}
+
+.info:first-line {
+    font-weight: bold;
+}
+
+@media screen and (orientation: portrait) {
+    #checkout-navigation {
+        height: auto;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    #checkout-navigation ul {
+        height: auto;
+        display: block;
+    }
+
+    #checkout-navigation li {
+        width: auto;
+        height: auto;
+        line-height: normal;
+        margin-bottom: 1em;
+    }
+
+    #checkout-navigation li:before {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+    }
+
+    .row {
+        display: block;
+    }
+    
+    [class*="col"] {
+        padding: 0;
+        margin-bottom: 1.5em;
+    }
+    
+    .col-md-6 {
+        width: auto;
+        
+    }
+}

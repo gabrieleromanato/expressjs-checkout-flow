@@ -1,0 +1,16 @@
+<nav id="checkout-navigation">
+    <ul>
+        <li <% if(section === 'info') { %> class="active" <% } %>>
+            <a href="/checkout">Information</a>
+        </li>
+        <li <% if(section === 'billing') { %> class="active" <% } %>>
+            <a href="/billing-shipping">Billing and shipping</a>
+        </li>
+        <li <% if(section === 'payment') { %>class="active"<% } %>>
+            <a href="/payment">Payment</a>
+        </li>
+        <li <% if(section === 'thank-you') { %> class="active" <% } %>>
+            <a href="/thank-you">Order complete</a>
+        </li>             
+    </ul>
+</nav>

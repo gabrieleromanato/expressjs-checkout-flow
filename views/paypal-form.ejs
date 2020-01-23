@@ -1,0 +1,27 @@
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" id="form-payment" novalidate>
+    <div>
+        <input name="cmd" value="_cart" type="hidden">
+        <input name="upload" value="1" type="hidden">
+        <input name="no_note" value="0" type="hidden">
+        <input name="bn" value="XY_BuyNow_WPS_CC" type="hidden">
+        <input name="tax_cart" value="0" type="hidden">
+        <input name="rm" value="2" type="hidden">
+        <input name="business" value="your@sandbox.email" type="hidden">
+        <input name="handling_cart" value="0" type="hidden">
+        <input name="currency_code" value="USD" type="hidden">
+        <input name="lc" value="US" type="hidden">
+        <input name="return" value="http://localhost:3000/thank-you" type="hidden">
+        <input name="cbt" value="Return to shop" type="hidden">
+        <input name="cancel_return" value="http://localhost:3000/checkout" type="hidden">
+        <% const items = [ { name: 'Sample product', quantity: 1, price: 10.50 } ]; %>
+        <% let n = 0; items.forEach(item => { n++; %>
+            <div>
+                <input name="item_name_<%= n %>" value="<%= item.name %>" type="hidden">
+                <input name="quantity_<%= n %>" value="<%= item.quantity %>" type="hidden">
+                <input name="amount_<%= n %>" value="<%= item.price.toFixed(2) %>" type="hidden">
+                <input name="shipping_<%= n %>" value="0" type="hidden">
+            </div>
+        <% }); %>
+        <input type="submit" value="Place order" class="btn">
+    </div>
+</form>
